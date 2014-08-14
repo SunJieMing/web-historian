@@ -32,6 +32,7 @@ describe("Node Server Request Listener Function", function() {
       function() { return res._ended; },
       function(){
         expect(res._responseCode).to.equal(200);
+        // console.log(res._data);
         expect(res._data.toString().match(/<input/)).to.be.ok; // the resulting html should have an input tag
         done();
     });
@@ -40,6 +41,7 @@ describe("Node Server Request Listener Function", function() {
   it("Should answer GET requests for archived websites", function(done) {
     var fixtureName = "www.google.com";
     var req = new stubs.Request("/" + fixtureName, "GET");
+    // console.log(req);
 
     handler.handleRequest(req, res);
 
@@ -87,7 +89,7 @@ describe("Node Server Request Listener Function", function() {
 
 describe("html fetcher helpers", function(){
 
-  it("should have a 'readListOfUrls' function", function(done){
+  it("should have a working 'readListOfUrls' function", function(done){
     var urlArray = ["example1.com", "example2.com"];
     var resultArray;
 
