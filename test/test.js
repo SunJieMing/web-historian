@@ -93,7 +93,7 @@ describe("html fetcher helpers", function(){
     var urlArray = ["example1.com", "example2.com"];
     var resultArray;
 
-    fs.writeFileSync(archive.paths.list, urlArray.join("\n"));
+    fs.writeFileSync('/Users/HR10/Code/IssaqAl-Ahmed/2014-07-web-historian/archives/sites.txt', urlArray.join("\n"));
     archive.readListOfUrls(function(urls){
       resultArray = urls;
     });
